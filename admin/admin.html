@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atelier Noir | Content Management System</title>
+    
+    <!-- Google Fonts matching the luxury website aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Netlify Identity Widget for secure authentication -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <style>
+        :root {
+            --bg-color: #1a1c1e;
+            --card-bg: #222528;
+            --text-color: #ede9e3;
+            --primary-color: #c79e6f;
+            --border-color: #31363b;
+            --muted-color: #aba398;
+        }
+
+        body {
+            background-color: var(--bg-color) !important;
+            color: var(--text-color) !important;
+            font-family: 'Manrope', sans-serif !important;
+        }
+
+        [data-slate-editor] {
+            font-family: 'Manrope', sans-serif !important;
+        }
+
+        .netlify-identity-modal .modal-content {
+            background-color: var(--card-bg) !important;
+            color: var(--text-color) !important;
+            border: 1px solid var(--border-color) !important;
+            border-radius: 0px !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Decap CMS Script -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <script>
+        // Initialize Netlify Identity listener for login redirects
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.reload();
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
