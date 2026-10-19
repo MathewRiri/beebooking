@@ -585,7 +585,7 @@
                 const dateObj = new Date(date + 'T00:00:00'); 
                 const dateStr = dateObj.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
 
-                const studioPhone = "+254798225901";
+                const studioPhone = "4376605107";
                 const optionLabel = `${selectedOpt.length} min ($${selectedOpt.price} CAD)`;
                 const message = `Hello Bee Fine Touch,\n\nI would like to request an appointment:\n\n*Treatment:* ${svc.name}\n*Option:* ${optionLabel}\n*Date:* ${dateStr}\n*Time:* ${time}\n*Name:* ${name}\n*Ref:* ${refCode}\n\nPlease let me know if this time is available to confirm.`;
                 const waUrl = `https://wa.me/${studioPhone}?text=${encodeURIComponent(message)}`;
